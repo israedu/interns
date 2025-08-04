@@ -1,5 +1,6 @@
 First Time Setup:
 1. composer install
-2. php artisan migrate
-3. php artisan voyager:install
-4. npm install
+2. setup .env, database, user, password
+3. php artisan migrate
+4. php artisan voyager:install
+5. npm install
