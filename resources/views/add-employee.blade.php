@@ -49,7 +49,14 @@
                                     <input type="hidden" name="id" value="{{ $emp->id }}">
                                     <button type="submit" class="btn btn-danger">Delete</button>
                                 </form>
-                            </td>   
+                                <form action="{{ route('update-employee') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id" value="{{ $emp->id }}">
+                                <button type="submit" class="btn btn-warning">Update</button>
+                            </form> 
+
+                            </td> 
+                             
                         </tr>
                     @endforeach
                 </tbody>

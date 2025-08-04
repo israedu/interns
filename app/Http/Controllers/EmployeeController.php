@@ -37,4 +37,5 @@ class EmployeeController extends Controller
         // Redirect or return response
         return redirect()->back()->with('success', 'Employee deleted successfully!');
     }   
+    
 }
