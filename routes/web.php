@@ -26,6 +26,12 @@ Route::get('/login', function () {
     return view('login');
 })->name('login');
 
+Route::post('/logout', function () {
+    auth()->logout();
+    return redirect()->route('login')->with('success', 'Logged out successfully!');
+})->name('logout');
+
+
 Route::post('/login', [EmployeeController::class, 'login'])->name('login'); 
 
 Route::post('/store-employee', [EmployeeController::class, 'store'])->name('store-employee'); 
