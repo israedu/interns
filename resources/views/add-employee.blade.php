@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Add Employee</title>
+        <title>Add/Update Employee</title>
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
     <body>
@@ -49,14 +49,7 @@
                                     <input type="hidden" name="id" value="{{ $emp->id }}">
                                     <button type="submit" class="btn btn-danger">Delete</button>
                                 </form>
-                                <form action="{{ route('update-employee') }}" method="POST">
-                                @csrf
-                                <input type="hidden" name="id" value="{{ $emp->id }}">
-                                <button type="submit" class="btn btn-warning">Update</button>
-                            </form> 
-
-                            </td> 
-                             
+                            </td>   
                         </tr>
                     @endforeach
                 </tbody>
