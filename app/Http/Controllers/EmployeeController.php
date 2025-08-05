@@ -51,6 +51,3 @@ public function update(Request $request)
     return redirect()->route('edit-employee', ['id' => $emp->id]);
 }
 }
-
-//this is a comment
-// This controller handles employee management including storing, deleting, editing, and updating employee records. 
