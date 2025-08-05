@@ -16,7 +16,7 @@
             </form>
         @endif
         @if(session('success'))
-            <div class="alert alert-success">
+            <div class="alert alert-success" style="display:block;" onload="setTimeout(() => { this.style.display = 'none'; }, 3000);">
                 {{ session('success') }}
             </div>
         @endif
