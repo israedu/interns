@@ -50,4 +50,20 @@ public function update(Request $request)
     $emp->update($request->only('name', 'email', 'position'));
     return redirect()->route('edit-employee', ['id' => $emp->id]);
 }
+    public function login(Request $request)
+    {
+        // Validate input
+        $validated = $request->validate([
+            'email'    => 'required|email',
+            'password' => 'required|string',
+        ]);
+
+        // Attempt to log in
+        if (auth()->attempt($validated)) {
+            return redirect()->route('add-employee')->with('success', 'Login successful!');
+        }
+
+        // If login fails
+        return redirect()->back()->withErrors(['email' => 'Invalid credentials'])->withInput();
+    }   
 }

@@ -16,10 +16,17 @@ use App\Http\Controllers\EmployeeController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
+
 Route::get('/add-employee', function () {
     return view('add-employee');
 })->name('add-employee'); 
+
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
+
+Route::post('/login', [EmployeeController::class, 'login'])->name('login'); 
 
 Route::post('/store-employee', [EmployeeController::class, 'store'])->name('store-employee'); 
 

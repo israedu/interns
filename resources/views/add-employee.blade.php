@@ -1,3 +1,6 @@
+@if(!auth()->check()) 
+    <script>window.location = "/";</script>
+@endif
 <html>
     <head>
         <title>Add/Update Employee</title>
