@@ -37,4 +37,20 @@ class EmployeeController extends Controller
         // Redirect or return response
         return redirect()->back()->with('success', 'Employee deleted successfully!');
     }   
+
+    public function edit(Request $request)
+{
+    $editEmp = Employee::findOrFail($request->id);
+    return view('add-employee', compact('editEmp')); 
 }
+
+public function update(Request $request)
+{
+    $emp = Employee::findOrFail($request->id);
+    $emp->update($request->only('name', 'email', 'position'));
+    return redirect()->route('edit-employee', ['id' => $emp->id]);
+}
+}
+
+//this is a comment
+// This controller handles employee management including storing, deleting, editing, and updating employee records. 
