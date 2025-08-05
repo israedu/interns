@@ -1,12 +1,10 @@
+@extends('templates.default')
+@section('title', isset($editEmp) ? 'Update Employee' : 'Add New Employee')
+@section('content') 
+
 @if(!auth()->check()) 
     <script>window.location = "/";</script>
 @endif
-<html>
-    <head>
-        <title>Add/Update Employee</title>
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    </head>
-<body>
     <div class="container">
         <h1>{{ isset($editEmp) ? 'Update Employee' : 'Add New Employee' }}</h1>
 
@@ -75,5 +73,4 @@
             </tbody>
         </table>
     </div>
-</body>
-</html>
+@endsection
