@@ -8,6 +8,21 @@
     </head>
 <body>
     <div class="container">
+
+        
+        
+        @if(auth()->check())
+            <form action="{{ route('logout') }}" method="POST" class="text-end mb-3">
+                @csrf
+                <button type="submit" class="btn btn-danger">Logout</button>
+            </form>
+        @endif
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+        
         <h1>{{ isset($editEmp) ? 'Update Employee' : 'Add New Employee' }}</h1>
 
         <form action="{{ isset($editEmp) ? route('update-employee') : route('store-employee') }}" method="POST" enctype="multipart/form-data">
